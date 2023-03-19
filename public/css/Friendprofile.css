@@ -1,0 +1,389 @@
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #59a4ff1f;
+
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+p::-webkit-scrollbar{
+  display: none;
+}
+table{
+    width: 100%;
+}
+
+  th,
+td {
+    border-bottom: 1px solid #dddddd;
+    padding: 5px 5px;
+    font-size: 14px;
+}
+
+td img {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: 5px solid #e6e7e8;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+    background-color: #edeef1;
+}
+
+tr:hover td {
+    color: #44b478;
+    /* cursor: pointer; */
+    background-color: #ffffff;
+}
+
+td button {
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    background-color: black;
+    color: #e6e7e8;
+}
+td a {
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    background-color: black;
+    color: #e6e7e8;
+    text-decoration: none;
+    
+}
+td:hover a {
+    color: #44b478;
+   
+    
+}
+
+.head{
+    text-align: center;
+}
+
+.namE{
+    font-weight: 300;
+}
+#postBox{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+#photoText{
+    text-align: center;
+    font-weight: bold;
+    color: blue;
+}
+
+#photo{
+    border-radius: 20px;
+}
+
+.yourPost{
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgba(101, 101, 101, 0.145);
+  background-color: #93c4ff2f;
+  border-radius: 20px;
+  margin: 20px 0;
+}
+
+
+.active{
+    font-weight:600;
+    /* background-color: #7d7d7d1a; */
+     /* border: 1px solid red; */
+    /* border-radius: 10px;  */
+   
+    
+}
+
+
+
+.cardCont{
+    display: flex;
+    /* min-height: 500px; */
+    /* max-height: 100%; */
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-around;
+    overflow: scroll;
+}
+
+.cardP{
+   
+    overflow-y: scroll;
+    max-height: 68px;
+    
+}
+
+.mainPhoto{
+border: 1px solid rgba(116, 116, 116, 0.605);
+border-radius: 5px;
+}
+
+.imagescard{
+    width: 220px; 
+    margin: auto ;
+    /* margin-left: 10px; */
+    display: inline-block;
+    border: 1px solid rgb(57, 56, 56);
+    border-radius: 2px;
+}
+
+.imageCnt{
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.th5{
+    /* text-align: center; */
+}
+.p-dt {
+  color: #a8a8a8;
+  font-size: 13px;
+}
+
+.p-dt i {
+  font-size: 14px;
+  margin-right: 2px;
+}
+
+.p-dt span {
+  position: relative;
+  top: -2px;
+}
+
+.post p{
+    height: 30px;
+    overflow-y: scroll;
+}
+
+.card-text a{
+text-decoration: none;
+}
+.card{
+    width: 310px;
+}
+
+.postbox{
+    display: flex;
+    justify-content: center;
+}
+
+::selection{
+    color: #fff;
+    background: #1a81ff;
+  }
+  .contpost{
+    width: 500px;
+    height: 480px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 10px;
+    transition: height 0.2s ease;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  }
+  .contpost.active{
+    height: 590px;
+  }
+  .contpost .wrapper{
+    width: 1000px;
+    display: flex;
+  }
+  .contpost .wrapper section{
+    width: 500px;
+    background: #fff;
+  }
+  .contpost img{
+    cursor: pointer;
+  }
+  .contpost .post{
+    transition: margin-left 0.18s ease;
+  }
+  .contpost.active .post{
+    margin-left: -500px;
+  }
+  .post header{
+    font-size: 22px;
+    font-weight: 600;
+    padding: 17px 0;
+    text-align: center;
+    border-bottom: 1px solid #bfbfbf;
+  }
+  .post form{
+    margin: 20px 25px;
+  }
+  .post form .content,
+  .audience .list li .column{
+    display: flex;
+    align-items: center;
+  }
+  .post form .content img{
+    cursor: default;
+    max-width: 52px;
+    border-radius: 20px;
+  }
+  .post form .content .details{
+    margin: -3px 0 0 12px;
+  }
+  form .content .details p{
+    font-size: 17px;
+    font-weight: 500;
+  }
+  
+  
+  form :where(textarea, button){
+    width: 100%;
+    outline: none;
+    border: none;
+  }
+  form textarea{
+    resize: none;
+    font-size: 18px;
+    margin-top: 30px;
+    min-height: 100px;
+  }
+  form textarea::placeholder{
+    color: #858585;
+  }
+  form textarea:focus::placeholder{
+    color: #b3b3b3;
+  }
+  form :where(.theme-emoji, .options){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .theme-emoji img:last-child{
+    max-width: 24px;
+  }
+  
+  
+  form .options{
+    /* height: 57px; */
+    margin: 15px 0;
+    padding: 0 15px;
+    border-radius: 7px;
+    border: 1px solid #B9B9B9;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* form .options :where(.list, li),
+  .audience :where(.arrow-back, .icon, li .radio){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+  form .options p{
+    color: #595959;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: default;
+    margin: 0;
+  }
+  
+  .options :where(.list, li){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.options .list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.options .list li{
+  height: 42px;
+  width: 42px;
+  margin: 0 -1px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.options .list li:hover{
+  background: #f0f1f4;
+}
+.options .list li img{
+  width: 23px;
+}
+  form button{
+    height: 53px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #BCC0C4;
+    cursor: no-drop;
+    border-radius: 7px;
+    background: #e2e5e9;
+    transition: all 0.3s ease;
+  }
+  form textarea:valid ~ button{
+    color: #fff;
+    cursor: pointer;
+    background: #4599FF;
+  }
+  form textarea:valid ~ button:hover{
+    background: #1a81ff;
+  }
+  .contpost .audience{
+    opacity: 0;
+    transition: opacity 0.12s ease;
+  }
+  .contpost.active .audience{
+    opacity: 1;
+  }
+  .audience header{
+    padding: 17px 0;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid #bfbfbf;
+  }
+  
+  #privacys{
+    border: none;
+  }
+  
+  #upPhoto{
+    width: 190px;
+  }
+
+footer div{
+    text-align: center;
+    margin: 10px;
+    /* background-color: #c4c4c4; */
+  }
+  footer {
+    margin-top: auto;
+    background-color: #c4c4c4;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+.modal-body{
+    display: flex;
+    max-height: 75vh;
+    overflow-y: auto;
+}
+
+.namE{
+  font-weight: 300;
+}

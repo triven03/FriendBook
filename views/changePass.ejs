@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/changepass.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>Change Password</title>
+  </head>
+
+  <body>
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark sticky-top" >
+        <div class="container-fluid">
+          
+            <a class="navbar-brand " id="photoText" href="/profile">
+              <img src="<%=user.ProfilePhoto%>" id="photo" alt="" width="50" height="50" class="d-inline-block align-text-top">
+              
+            </a>
+            <a class="navbar-brand namE" href="/profile">
+              <%=user.Name%>
+              
+            </a>
+            
+          
+          <!-- <h3 class="navbar-brand" > <%=user.Name%></h3>
+          <img class="navbar-brand img-fluid" src="<%=user.ProfilePhoto%>" alt=""> -->
+          <!-- <img class="navbar-brand" > <%=user.Name%></h> -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="/">Home</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="/friends">Friends</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/search">Search</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/changePass">Change Password</a>
+              </li>
+
+    
+             
+            </ul>
+           
+              <a href="/logout">
+              <button class="btn btn-outline-danger">Log Out</button>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+
+    <div class="container extra">
+       
+        <div class="containerr main">
+            <header class="signup-header">
+                <h3>Change Password</h3>
+                <hr>
+            </header>
+
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </symbol>
+                <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                </symbol>
+                <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </symbol>
+              </svg>
+
+              
+              <% if(error) {%>
+                <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+
+                 <%= error.massage %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" id="alertbtn"></button>
+                </div>
+
+                
+                <%}%>
+
+        <main class="signup-body">
+                
+               
+            <form method="post" action="/changePass" onsubmit="return checkForm()">
+             
+                <p>
+                    <label for="CurrentPass">Current Password</label>
+                    <input type="hidden" value="<%=user.Password%>" id="CurrentPassVal">
+                    <input type="password"  placeholder="Enter Your Current Password" name="CurrentPass" id="CurrentPass" required>
+                </p>
+                <div class="message" id="crntPassDiv">
+                    <p id="crntPassDivM" class="Error">Your Current Password is Wrong</p>
+                </div>
+                
+                <p>
+                    <label for="Newpassword">New Password</label>
+                    <input type="password" id="Newpassword"  name="Newpassword" placeholder="Enter Your New Password" required>
+                </p>
+                <div class="message" id="newPassDiv">
+                    <p id="newPassDivM" class="Error">Password length Should be atleat 8</p>
+                </div>
+
+                <p>
+                    <label for="Cnfpassword">Confirm Password</label>
+                    <input type="password" id="Cnfpassword"  name="Cnfpassword" placeholder="Confirm Password" required>
+                </p>
+
+                <div class="message" id="cnfmPassDiv">
+                    <p id="cnfmPassDivM" class="Error">Confirm Password is Not Match</p>
+                </div>
+                
+                <div class="btne">
+                    <input type="submit" id="submit" value="Login">
+                </div>
+                
+            </form>
+               
+        
+            
+        </main>
+        
+        
+       </div>
+
+    </div>
+      
+    <footer>
+        <div>
+          &#169 Trivendra 2023 All Right Reserved
+        </div>
+      </footer>
+      
+      
+      
+    <script src="/js/changepass.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+   
+  </body>
+</html>
