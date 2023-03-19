@@ -21,7 +21,7 @@ function checkMail(input) {
    if (email.length) {
       
       const reqst = new XMLHttpRequest();
-      reqst.open("POST", "http://localhost:3000/checkMail");
+      reqst.open("POST", "/checkMail");
       // reqst.open("POST", "https://graphicalpassword-3p34g811xx2lcdgtc2c.codequotient.in/checkMail");
       reqst.setRequestHeader("content-type", "application/json")
       reqst.send(JSON.stringify({ email: email}));
@@ -67,7 +67,7 @@ if (mobile.length<10) {
 if (mobile.length==10) {
       
       const reqst = new XMLHttpRequest();
-      reqst.open("POST", "http://localhost:3000/checkMob");
+      reqst.open("POST", "/checkMob");
       // reqst.open("POST", "https://graphicalpassword-3p34g811xx2lcdgtc2c.codequotient.in/checkMob");
       reqst.setRequestHeader("content-type", "application/json")
       reqst.send(JSON.stringify({ Mobile: mobile}));
