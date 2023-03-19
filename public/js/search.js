@@ -1,32 +1,5 @@
-// getting all required elements
-// let suggestions = [
-//     "Channel",
-//     "CodingLab",
-//     "CodingNepal",
-//     "YouTube",
-//     "YouTuber",
-//     "YouTube Channel",
-//     "Blogger",
-//     "Bollywood",
-//     "Vlogger",
-//     "Vechiles",
-//     "Facebook",
-//     "Freelancer",
-//     "Facebook Page",
-//     "Designer",
-//     "Developer",
-//     "Web Designer",
-//     "Web Developer",
-//     "Login Form in HTML & CSS",
-//     "How to learn HTML & CSS",
-//     "How to learn JavaScript",
-//     "How to become Freelancer",
-//     "How to become Web Designer",
-//     "How to start Gaming Channel",
-//     "How to start YouTube Channel",
-//     "What does HTML stands for?",
-//     "What does CSS stands for?",
-// ];
+
+
 var suggestions=[];
 addFriendSuggestion();
 const searchWrapper = document.querySelector(".search-input");
@@ -56,7 +29,7 @@ inputBox.onkeyup = (e)=>{
             console.log(userData);
 
             const reqst = new XMLHttpRequest();
-      reqst.open("POST", `http://localhost:3000/search`);
+      reqst.open("POST", `/search`);
       
       reqst.setRequestHeader("content-type", "application/json")
       reqst.send(JSON.stringify({ data: userData}));
@@ -134,7 +107,7 @@ function select(element){
         console.log(selectData);
 
         const reqst = new XMLHttpRequest();
-      reqst.open("POST", `http://localhost:3000/search`);
+      reqst.open("POST", `/search`);
       
       reqst.setRequestHeader("content-type", "application/json")
       reqst.send(JSON.stringify({ data: selectData}));
@@ -188,9 +161,7 @@ function select(element){
            }
 
    })
-        // webLink = `https://www.google.com/search?q=${selectData}`;
-        // linkTag.setAttribute("href", webLink);
-        // linkTag.click();
+        
     }
     searchWrapper.classList.remove("active");
 }
@@ -231,7 +202,7 @@ function ShowFriendProf(fid) {
 function addFriendSuggestion() {
 
     const reqst = new XMLHttpRequest();
-      reqst.open("GET", `http://localhost:3000/friendSuggestion`);
+      reqst.open("GET", `/friendSuggestion`);
       
       reqst.setRequestHeader("content-type", "application/json")
       reqst.send();
@@ -247,5 +218,5 @@ function addFriendSuggestion() {
         });
        
 
-        // console.log(suggestions);
+        
 }
